@@ -7,13 +7,11 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.lang import Builder
 
-from Saraksts import saraksts_11_DIT, stundu_laiki
+from saraksts import saraksts_11_DIT, stundu_laiki
 from datetime import datetime, time
 from datetime import timedelta
 
 from datetime import datetime
-
-import time
 
 from kivy.config import Config
 Config.set('graphics', 'width', '250')
