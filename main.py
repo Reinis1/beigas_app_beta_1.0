@@ -19,7 +19,7 @@ from kivy.config import Config
 Config.set('graphics', 'width', '250')
 Config.set('graphics', 'height', '500')
 
-
+__version__ = "1.0"
 class BeigasApp(App):
     screenm = ScreenManager(transition=NoTransition())
 
@@ -67,9 +67,9 @@ class MainWidget(Screen):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        Clock.schedule_interval(self.update, 1)
+        Clock.schedule_interval(self.update, 5)
         print(self.what_is_now())
-        Clock.schedule_once(self.innit_screen, 1/60)
+        Clock.schedule_once(self.innit_screen, 5)
 
     def current_lesson_index(self):
         if self.day < 5:
