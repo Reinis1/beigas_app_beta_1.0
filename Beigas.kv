@@ -1,0 +1,312 @@
+# sm:
+#    MainWidget:
+#    test_widget:
+# #:import MAinWidget Beigas/main.py.MainWidget
+#<Manager>:
+#    id: screen_manager
+#
+#    screen_one: screen_one
+#    screen_two: screen_two
+#    screen_three: screen_three
+#
+#    MainWidget:
+#        id: screen_one
+#        name: "screen1"
+#        manager: screen_manager
+#
+#    Weekend:
+#        id: screen_two
+#        name: "screen2"
+#        manager: screen_manager
+#
+#    Break:
+#        id: screen_three
+#        name: "screen3"
+#        manager: screen_manager
+
+
+
+<MainWidget>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1, None
+            height: "100dp"
+            background_color: (1, 1, 1, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            orientation: "vertical"
+            Label:
+                size_hint: 1, 0.2
+                text: "Beidzas pēc:"
+                color: 0, 0, 0, 1
+            Label:
+                bold: True
+                font_size: dp(60)
+                color: 1, 0, 0, 1
+                text: root.current_lesson_ends_in_txt
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size_hint_y: None
+                cols: 1
+                padding: 10
+                spacing: 40
+                height: self.minimum_height
+                Label:
+                    text: root.current_lesson_txt
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text: root.next_lesson
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text: root.next_lesson_kab
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text: root.next_lesson_starts_in
+                    size_hint: [1, None]
+                    height: dp(60)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: "40dp"
+            background_color: (1, 1, 1, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    root.change()
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "second screen"
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "screen2"
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "screen3"
+
+
+<Weekend>:
+    # name: "2"
+    BoxLayout:
+        Label:
+            text: "ir brivdiena, iechilo"
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, None
+        height: "40dp"
+        background_color: (1, 1, 1, 1)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            size_hint: 0.2, 1
+            text: "Screen2"
+            on_release:
+                app.root.current = "screen2"
+        Button:
+            size_hint: 0.2, 1
+            text: "Screen1"
+            on_release:
+                app.root.current = "screen1"
+        Button:
+            size_hint: 0.2, 1
+            text: "TAB"
+            on_release:
+                app.root.current = "screen2"
+        Button:
+            size_hint: 0.2, 1
+            text: "TAB"
+            on_release:
+                app.root.current = "screen3"
+
+
+
+<Break>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1, None
+            height: "100dp"
+            background_color: (179/255, 250/255, 137/255)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            orientation: "vertical"
+            Label:
+                size_hint: 1, 0.2
+                text: "Starpbrīdis beidzas pēc:"
+                color: 0, 0, 0, 1
+            Label:
+                bold: True
+                font_size: dp(60)
+                color: 0, 1, 0, 1
+                text: root.min_until_break_end()
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size_hint_y: None
+                cols: 1
+                padding: 10
+                spacing: 40
+                height: self.minimum_height
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: "40dp"
+            background_color: (1, 1, 1, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    root.change()
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "second screen"
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "screen2"
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "screen3"
+
+<Free>:
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1, None
+            height: "100dp"
+            background_color: (1, 1, 1, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            orientation: "vertical"
+            Label:
+                size_hint: 1, 0.4
+                text: root.next_lesson_label()
+                color: 0, 0, 0, 1
+            Label:
+                bold: True
+                font_size: dp(30)
+                color: 1, 0, 0, 1
+                text: root.next_lesson_starts_in()
+        ScrollView:
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size_hint_y: None
+                cols: 1
+                padding: 10
+                spacing: 40
+                height: self.minimum_height
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+                Label:
+                    text:
+                    size_hint: [1, None]
+                    height: dp(60)
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: "40dp"
+            background_color: (1, 1, 1, 1)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                size_hint: 0.2, 1
+                text: "Screen2"
+                on_release:
+                    app.root.current = "screen2"
+            Button:
+                size_hint: 0.2, 1
+                text: "Screen1"
+                on_release:
+                    app.root.current = "screen1"
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "screen2"
+            Button:
+                size_hint: 0.2, 1
+                text: "TAB"
+                on_release:
+                    app.root.current = "screen3"
+
+
+
+
+
