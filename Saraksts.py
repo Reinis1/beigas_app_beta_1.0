@@ -86,3 +86,29 @@ WORLD_MAP = [
 ['x',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ','x'],
 ['x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x','x'],
 ]
+
+# sm:
+#    MainWidget:
+#    test_widget:
+#<Manager>:
+#    id: screen_manager
+#
+#    screen_one: screen_one
+#    screen_two: screen_two
+#    screen_three: screen_three
+#
+#    MainWidget:
+#        id: screen_one
+#        name: "screen1"
+#        manager: screen_manager
+#
+#    Weekend:
+#        id: screen_two
+#        name: "screen2"
+#        manager: screen_manager
+#
+#    Break:
+#        id: screen_three
+#        name: "screen3"
+#        manager: screen_manager
+
