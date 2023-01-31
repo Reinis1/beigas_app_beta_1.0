@@ -36,7 +36,7 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,docutils,urllib3,chardet,idna,beautifulsoup4,
+requirements = python3,kivy,docutils,urllib3,chardet,idna
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes

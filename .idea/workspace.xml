@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7bd7a1fe-41f4-4bd5-b35d-ec0fb514007b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/fonts/Eurostile.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/Sackers-Gothic-Std-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/heydings_controls.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/heydings_icons.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/fonts/modernpics.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/beigas.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/break.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/free.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/konsultacijas.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/laiki.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/set.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/setup.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/stundu_saraksts.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/tools.kv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/desert.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/images/lesson.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Beigas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Beigas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Beigas.kv" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/buildozer.spec" beforeDir="false" afterPath="$PROJECT_DIR$/buildozer.spec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.pickle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saraksts.py" beforeDir="false" afterPath="$PROJECT_DIR$/saraksts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stunda/.idea/TheLab_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stunda/.idea/TheLab_project.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stunda/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Stunda/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Stunda/buildozer.spec" beforeDir="false" afterPath="$PROJECT_DIR$/../Stunda/buildozer.spec" afterDir="false" />
