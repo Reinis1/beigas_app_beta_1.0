@@ -1,0 +1,172 @@
+<Set>
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.6
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Iestatījumi'
+            bold: True
+            size_hint_y: 0.1
+
+        ScrollView:
+            size: root.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size: root.size
+                size_hint_y: None
+                cols: 3
+                row_force_default: True
+                row_default_height: dp(40)
+#                 col_default_width: dp(40)
+#                Label:
+#                    size_hint_x: 0.01
+#                Button:
+#                    text: 'Iestatījumi'
+#                    font_size: dp(30)
+#                    text_size: self.size
+#                    halign: 'left'
+#                    valign: 'center'
+#                Label:
+#                    size_hint_x: None
+#                    width: 0
+                Button:
+                    font_name: "fonts/heydings_icons.ttf"
+                    text: 'T'
+                    size_hint_x: None
+                    width: dp(40)
+                    background_color: (0,0,0,0)
+                Button:
+                    text: 'Stundu laiki'
+                    text_size: self.size
+                    halign: 'left'
+                    valign: 'center'
+                    padding_x: 10
+                    background_color: (1,1,1,0.2)
+                    on_press:
+                        app.root.current = 'laiki'
+                Label:
+                    text: '>'
+                    halign: 'right'
+                    size_hint_x: None
+                    width: dp(40)
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'bottom'
+                    color: (1,1,1,0.7)
+                    font_size: dp(15)
+
+                Button:
+                    font_name: "fonts/heydings_controls.ttf"
+                    text: '5'
+                    size_hint_x: None
+                    width: dp(40)
+                    background_color: (0,0,0,0)
+                Button:
+                    text: 'Stundu saraksts'
+                    text_size: self.size
+                    halign: 'left'
+                    valign: 'center'
+                    padding_x: 10
+                    background_color: (1,1,1,0.2)
+                    on_press:
+                        app.root.current = 'table'
+                Label:
+                    text: '>'
+                    halign: 'right'
+                    size_hint_x: None
+                    width: dp(40)
+                    text_size: self.size
+                    halign: 'center'
+                    valign: 'bottom'
+                    color: (1,1,1,0.7)
+                    font_size: dp(15)
+
+
+
+                Label:
+                    size_hint_x: 0.01
+                Label:
+                    text: '64.vsk. skolēniem'
+                    bold: True
+                    font_size: dp(12)
+                    text_size: self.size
+                    halign: 'left'
+                    valign: 'center'
+                Label:
+                    size_hint_x: None
+                    width: 0   #                    ------------tikai 64 vsk
+
+                Button:
+                    font_name: "fonts/heydings_icons.ttf"
+                    text: 'Z'
+                    size_hint_x: None
+                    width: dp(40)
+                    background_color: (0,0,0,0)
+                Button:
+                    text: 'Klase'
+                    text_size: self.size
+                    halign: 'left'
+                    valign: 'center'
+                    padding_x: 10
+                    background_color: (1,1,1,0.2)
+                    on_press:
+                        app.root.current = 'setup'
+                Label:
+                    text: root.klase
+                    halign: 'right'
+                    size_hint_x: None
+                    width: dp(40)
+                    text_size: self.size
+                    halign: 'left'
+                    valign: 'bottom'
+                    color: (1,1,1,0.7)
+                    font_size: dp(10)
+
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, None
+        height: "50dp"
+        background_color: (0.1, 0.1, 0.1, 0.5)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            size_hint: 0.2, 0.8
+            background_color: 'gray'
+            font_name: "fonts/heydings_controls.ttf"
+            text: "<" # H - maja L atslega X krusts C settings M meklet, + addt: "G" # H - maja L atslega X krusts C settings M meklet, + add
+            on_release:
+                root.home()
+        Label:
+            size_hint_x: 0.02
+        Button:
+            size_hint: 0.2, .8
+            background_color: 'gray'
+            font_name: "fonts/heydings_icons.ttf"
+            text: "H"
+            on_release:
+                root.home()
+        Label:
+            size_hint_x: 0.02
+        Button:
+            size_hint: 0.2, .8
+            background_color: 'gray'
+            font_name: "fonts/heydings_icons.ttf"
+            text: "C"
+            disabled: True
+            on_release:
+                app.root.current = "set"

@@ -1,0 +1,128 @@
+<Laiki>:
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            id: laiki_header
+            text: "stundu laiki"
+            size_hint: 1, 0.1
+            font_size: dp(12)
+
+        ScrollView:
+            size: root.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size: root.size
+                size_hint_y: None
+                cols: 1
+                BoxLayout:
+                    GridLayout:
+                        size: root.size
+                        size_hint_y: None
+                        cols: 1
+                        row_force_default: True
+                        row_default_height: dp(40)
+                        size_hint_x: 0.2
+                        id: lesson_count_number
+                    GridLayout:
+                        size: root.size
+                        size_hint_y: None
+                        cols: 1
+                        row_force_default: True
+                        row_default_height: dp(40)
+                        size_hint_x: 0.2
+                        id: start_time_h
+                    GridLayout:
+                        size: root.size
+                        size_hint_y: None
+                        cols: 1
+                        row_force_default: True
+                        row_default_height: dp(40)
+                        size_hint_x: 0.2
+                        id: start_time_m
+
+                    GridLayout:
+                        size: root.size
+                        size_hint_y: None
+                        cols: 1
+                        row_force_default: True
+                        row_default_height: dp(40)
+                        size_hint_x: 0.2
+                        id: laiki_middle
+
+                    GridLayout:
+                        size: root.size
+                        size_hint_y: None
+                        cols: 1
+                        row_force_default: True
+                        row_default_height: dp(40)
+                        size_hint_x: 0.2
+                        id: end_time_h
+                    GridLayout:
+                        size: root.size
+                        size_hint_y: None
+                        cols: 1
+                        row_force_default: True
+                        row_default_height: dp(40)
+                        size_hint_x: 0.2
+                        id: end_time_m
+                    GridLayout:
+                        size: root.size
+                        size_hint_y: None
+                        cols: 1
+                        row_force_default: True
+                        row_default_height: dp(40)
+                        size_hint_x: 0.1
+
+
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: "50dp"
+            background_color: (0.1, 0.1, 0.1, 0.5)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                size_hint: 0.2, 0.8
+                background_color: 'gray'
+                font_name: "fonts/modernpics.otf"
+                text: "X"
+                font_size: dp(20)
+                on_release:
+                    app.root.current = "set"
+            Label:
+                size_hint_x: 0.02
+            Button:
+                size_hint: 0.2, .8
+                background_color: 'gray'
+                font_name: "fonts/heydings_icons.ttf"
+                text: "H"
+                on_release:
+                    root.home()
+            Label:
+                size_hint_x: 0.02
+            Button:
+                size_hint: 0.2, .8
+                background_color: 'gray'
+                font_name: "fonts/modernpics.otf"
+                text: "%"
+                font_size: dp(20)
+                on_press:
+                    root.save(1)

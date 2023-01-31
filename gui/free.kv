@@ -1,0 +1,114 @@
+<Free>:
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: "vertical"
+        BoxLayout:
+            size_hint: 1, None
+            height: "100dp"
+            canvas:
+                Color:
+                    rgba: 0.3, 0.3, 0.3, 0.3
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
+                    radius: [(0, 0), (0, 0), (30, 30), (30, 30)]
+            orientation: "vertical"
+            Label:
+                #size_hint: 0.2, 1
+                text: root.next_lesson_label
+                #text_size: self.size
+                valign: 'bottom'
+                color: 1, 1, 1, 1
+            Label:
+                bold: True
+                font_size: dp(30)
+                color: 1, 0, 0, 1
+                text: root.next_lesson_starts_in_int
+        BoxLayout:
+            Label:
+                size_hint_x: 0.05
+            ScrollView:
+                do_scroll_x: False
+                do_scroll_y: True
+                GridLayout:
+                    size: root.size
+                    size_hint_y: None
+                    cols: 1
+                    BoxLayout:
+                        size_hint_y: 0.1
+                    BoxLayout:
+                        background_color: 0,0,0,0.5
+                        canvas:
+                            Color:
+                                rgba: self.background_color
+                            RoundedRectangle:
+                                size: self.size
+                                pos: self.pos
+                                radius: [(20, 20), (20, 20), (20, 20), (20, 20)]
+                        size_hint_y: 0.2
+                        size: root.size
+                        BoxLayout:
+                            orientation: 'vertical'
+                            Label:
+                                text: 'Nākamā stunda:'
+                                #font_size: dp(11)
+                                size_hint_y: 0.5
+                            Label:
+                                text: root.next_lesson
+                                font_size: self.width/16
+                                bold: True
+                                size_hint_y: 0.5
+                        Label:
+                            text: root.next_lesson_kab
+                            bold: True
+                            size_hint_x: 0.4
+                            font_size: self.width/6
+                    BoxLayout:
+                        size_hint_y: 0.4
+            Label:
+                size_hint_x: 0.05
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: "50dp"
+            background_color: (0.1, 0.1, 0.1, 0.5)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                size_hint: 0.2, 0.8
+                background_color: 'gray'
+                font_name: "fonts/heydings_icons.ttf"
+                text: "G" # H - maja L atslega X krusts C settings M meklet, + add
+                on_release:
+                    app.root.current = "tools"
+            Label:
+                size_hint_x: 0.02
+            Button:
+                disabled: True
+                size_hint: 0.2, .8
+                font_name: "fonts/heydings_icons.ttf"
+                text: "H"
+            Label:
+                size_hint_x: 0.02
+            Button:
+                size_hint: 0.2, .8
+                background_color: 'gray'
+                font_name: "fonts/heydings_icons.ttf"
+                text: "C"
+                on_release:
+                    app.root.current = "set"

@@ -7,7 +7,7 @@ title = beigas
 package.name = beigasapp
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.
+package.domain = org.beigas
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -36,7 +36,7 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,docutils,kivy-deps.angle,kivy-deps.glew,kivy-deps.sdl2,Kivy-Garden,pygments,pypiwin32,pytz,zope.interface
+requirements = python3,kivy,docutils,urllib3,chardet,idna,beautifulsoup4,
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -92,7 +92,7 @@ fullscreen = 0
 #icon.adaptive_background.filename = %(source.dir)s/data/icon_bg.png
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET
 
 # (list) features (adds uses-feature -tags to manifest)
 #android.features = android.hardware.usb.host

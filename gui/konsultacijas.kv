@@ -1,0 +1,79 @@
+<kons>:
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            size_hint: 1, 0.1
+            text: "Konsultaciju mekletajs"
+        BoxLayout:
+            size_hint_y: 0.05
+            TextInput:
+                size_hint: 0.7, 1
+                background_color: (.5, .5, .5, .5)
+                id: kons_input
+                text: "vārds/uzvards/priekšmets"
+                multiline: False
+                on_text_validate: root.on_text_validate(self)
+                on_focus:
+                    root.on_focus(self)
+            Button:
+                size_hint: 0.1, 1
+                font_name: "fonts/Heydings_icons.ttf"
+                text: "M"
+                on_press:
+                    root.on_text_validate(self)
+            Label:
+                size_hint_x: 0.1
+        Label:
+            text: root.my_text
+            text_size: self.width, None
+            size_hint: 1, 0.3
+            height: self.texture_size[1]
+            multiline: True
+        Label:
+            size_hint: 1, 0.4
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, None
+        height: "50dp"
+        background_color: (0.1, 0.1, 0.1, 0.5)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            size_hint: 0.2, 0.8
+            background_color: 'gray'
+            font_name: "fonts/heydings_controls.ttf"
+            text: "<" # H - maja L atslega X krusts C settings M meklet, + addt: "G" # H - maja L atslega X krusts C settings M meklet, + add
+            on_release:
+                app.root.current = 'tools'
+        Label:
+            size_hint_x: 0.02
+        Button:
+            size_hint: 0.2, .8
+            background_color: 'gray'
+            font_name: "fonts/heydings_icons.ttf"
+            text: "H"
+            on_release:
+                root.home()
+        Label:
+            size_hint_x: 0.02
+        Button:
+            size_hint: 0.2, .8
+            background_color: 'gray'
+            font_name: "fonts/heydings_icons.ttf"
+            text: "C"
+            on_release:
+                app.root.current = "set"

@@ -1,0 +1,95 @@
+<setup>:
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            size_hint_y: 0.1
+            text: 'izvelies klasi'
+        ScrollView:
+            size: root.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size: root.size
+                size_hint_y: None
+                cols: 1
+                BoxLayout:
+                    id: classes
+                    orientation: 'vertical'
+        BoxLayout:
+            size_hint_y: 0.1
+            Button:
+                size_hint: 0.2, 1
+                background_color: 'gray'
+                font_name: "fonts/heydings_controls.ttf"
+                text: "<" # H - maja L atslega X krusts C settings M meklet, + addt: "G" # H - maja L atslega X krusts C settings M meklet, + add
+                on_press:
+                    app.root.current = "set"
+            Label:
+                size_hint_x: 0.02
+            Button:
+                size_hint: 0.2, 1
+                background_color: 'gray'
+                font_name: "fonts/heydings_icons.ttf"
+                text: "H"
+                on_release:
+                    root.home()
+            Label:
+                size_hint_x: 0.02
+            Button:
+                size_hint: 0.2, 1
+                background_color: 'gray'
+                font_name: "fonts/heydings_icons.ttf"
+                text: "C"
+                on_press:
+                    app.root.current = "set"
+
+
+
+<start>:
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            size_hint_y: 0.2
+            text: 'Šeit kaut kad būs sasveicināšanās teksts'
+        Label:
+            size_hint_y: 0.1
+            text: 'Dodies uz iestatījumiem un ievadi savu stundu sarakstu un laikus'
+        Label:
+            size_hint_y: 0.1
+            text:
+        Button:
+            size_hint_y: 0.2
+            text: 'Sākt >'
+            background_normal: "images/desert.png"
+            border: 40, 30, 30, 30
+            #outline_color: 'white'
+        Label:
+            size_hint_y: 0.2
+            text:
+        Button:
+            size_hint_y: 0.1
+            text: 'Ievadīt automātiski\n(tikai R64.vsk skolēniem)'
+        Label:
+            size_hint_y: 0.1
+            text:
+

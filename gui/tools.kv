@@ -1,0 +1,83 @@
+<tools>:
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.6
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    ScrollView:
+        size: root.size
+        do_scroll_x: False
+        do_scroll_y: True
+        GridLayout:
+            size: root.size
+            size_hint_y: None
+            cols: 1
+            BoxLayout:
+                BoxLayout:
+                    size_hint: 0.1, 1
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        size_hint: 1, 0.03
+                    Button:
+                        size_hint: 1, 0.1
+                        background_color: (.5,.5,.5,.1)
+                        text: "Konsultaciju mekletajs"
+                        on_press:
+                            app.root.current = "kons"
+                    Label:
+                        size_hint: 1, 0.03
+                    Button:
+                        size_hint: 1, 0.1
+                        background_color: (.5,.5,.5,.1)
+                        text: "Šī poga crashos aplikāciju"
+                        on_press:
+                            app.root.current = "a"
+                    Label:
+                        size_hint: 1, 0.8
+                        text: ""
+                BoxLayout:
+                    size_hint: 0.1, 1
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: 1, None
+        height: "50dp"
+        background_color: (0.1, 0.1, 0.1, 0.5)
+        canvas.before:
+            Color:
+                rgba: self.background_color
+            Rectangle:
+                size: self.size
+                pos: self.pos
+        Button:
+            size_hint: 0.2, 0.8
+            background_color: 'gray'
+            font_name: "fonts/heydings_controls.ttf"
+            text: "<" # H - maja L atslega X krusts C settings M meklet, + addt: "G" # H - maja L atslega X krusts C settings M meklet, + add
+            on_release:
+                root.home()
+        Label:
+            size_hint_x: 0.02
+        Button:
+            size_hint: 0.2, .8
+            background_color: 'gray'
+            font_name: "fonts/heydings_icons.ttf"
+            text: "H"
+            on_release:
+                root.home()
+        Label:
+            size_hint_x: 0.02
+        Button:
+            size_hint: 0.2, .8
+            background_color: 'gray'
+            font_name: "fonts/heydings_icons.ttf"
+            text: "C"
+            on_release:
+                app.root.current = "set"

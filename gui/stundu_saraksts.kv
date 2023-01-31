@@ -1,0 +1,120 @@
+<table>:
+    Image:
+        source: "images/desert.png"
+        allow_stretch: True
+        keep_ratio: False
+        canvas:
+            Color:
+                rgba: 0, 0, 0, 0.8
+            Rectangle:
+                size: self.size
+                pos: self.pos
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            size_hint: 1, 0.1
+            font_name: "fonts/Eurostile.ttf"
+            text: "Stundu saraksts"
+        BoxLayout:
+            size_hint: 1, 0.1
+            orientation: 'horizontal'
+            ToggleButton:
+                size_hint: 0.2, 1
+                background_color: "gray"
+                id: my_toggle1
+                text: "P"
+                on_state: root.uncover(self, 0)
+                group: 'day'
+            ToggleButton:
+                id: my_toggle2
+                size_hint: 0.2, 1
+                text: "O"
+                background_color: "gray"
+                on_state: root.uncover(self, 1)
+                group: 'day'
+            ToggleButton:
+                background_color: "gray"
+                id: my_toggle3
+                size_hint: 0.2, 1
+                text: "T"
+                group: 'day'
+                on_state: root.uncover(self, 2)
+            ToggleButton:
+                id: my_toggle4
+                background_color: "gray"
+                size_hint: 0.2, 1
+                text: "C"
+                group: 'day'
+                on_state: root.uncover(self, 3)
+            ToggleButton:
+                id: my_toggle5
+                background_color: "gray"
+                size_hint: 0.2, 1
+                text: "Pk"
+                group: 'day'
+                on_state: root.uncover(self, 4)
+
+        ScrollView:
+            size: root.size
+            do_scroll_x: False
+            do_scroll_y: True
+            GridLayout:
+                size: root.size
+                size_hint_y: None
+                cols: 1
+                BoxLayout:
+                    BoxLayout:
+                        size_hint_x: 0.05
+                        id: table_index
+                        orientation: 'vertical'
+                    BoxLayout:
+                        size_hint_x: 0.55
+                        id: table
+                        orientation: 'vertical'
+                    BoxLayout:
+                        id: table_kab
+                        size_hint_x: 0.2
+                        orientation: 'vertical'
+
+
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 1, None
+            height: "50dp"
+            background_color: (0.1, 0.1, 0.1, 0.5)
+            canvas.before:
+                Color:
+                    rgba: self.background_color
+                Rectangle:
+                    size: self.size
+                    pos: self.pos
+            Button:
+                size_hint: 0.2, 0.8
+                background_color: 'gray'
+                font_name: "fonts/modernpics.otf"
+                text: "X"
+                font_size: dp(20)
+                on_release:
+                    app.root.current = "set"
+            Label:
+                size_hint_x: 0.02
+            Button:
+                size_hint: 0.2, .8
+                background_color: 'gray'
+                font_name: "fonts/heydings_icons.ttf"
+                text: "H"
+                on_release:
+                    root.home()
+            Label:
+                size_hint_x: 0.02
+            Button:
+                id: table_save
+                size_hint: 0.2, .8
+                background_color: 'gray'
+                font_name: "fonts/modernpics.otf"
+                text: "%"
+                font_size: dp(20)
+                on_press:
+                    root.save(self)
+                    # app.home(self)

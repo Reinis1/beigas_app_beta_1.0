@@ -4,5 +4,8 @@
     <content url="file://$MODULE_DIR$" />
     <orderEntry type="jdk" jdkName="Python 3.10 (venv)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="Testing" />
+    <orderEntry type="module" module-name="Galaxy" />
+    <orderEntry type="module" module-name="TheLab_project" />
   </component>
 </module>
